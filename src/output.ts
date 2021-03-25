@@ -90,16 +90,17 @@ function replaceMarkdownDocsApi(content: string, data: DocsData) {
 function markdownIndex(data: DocsData) {
   const o: string[] = [];
 
-  if (data?.api?.methods.length) {
-    o.push(`**Methods**`)
-  }
+  if (data?.api?.methods) {
+    const methods = data.api.methods;
+    o.push(`**Methods**<br>`)
 
-  data?.api?.methods.forEach(m => {
-    o.push(`[${m.name}(${m.parameters.length > 0 ? '...' : ''})](#${m.slug})`);
-  });
+    methods.forEach((m, i) => {
+      o.push(`[${m.name}(${m.parameters.length > 0 ? '...' : ''})](#${m.slug})${i < (methods.length - 1) ? '<br>' : ''}`);
+    });
 
-  if (data?.api?.methods.length) {
-    o.push(`\n`);
+    if (methods.length) {
+      o.push(`\n`);
+    }
   }
 
   if (data.interfaces.length > 0) {
