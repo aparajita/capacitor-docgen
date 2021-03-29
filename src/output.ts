@@ -104,11 +104,11 @@ function markdownIndex(data: DocsData) {
   }
 
   if (data.interfaces.length > 0) {
-    o.push(`[Interfaces](#interfaces)`);
+    o.push(`[Interfaces](#interfaces)<br>`);
   }
 
   if (data.enums.length > 0) {
-    o.push(`[Enums](#enums)`);
+    o.push(`[Enums](#enums)<br>`);
   }
 
   return o.join('\n').trim();
