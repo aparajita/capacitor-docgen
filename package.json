@@ -1,5 +1,5 @@
 {
-  "version": "0.0.10-002",
+  "version": "0.0.10-003",
   "name": "@aparajita/capacitor-docgen",
   "description": "Docs Readme Markdown and JSON Generator for Capacitor Plugins",
   "keywords": [
